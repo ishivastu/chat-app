@@ -1,0 +1,44 @@
+# Node / Bun
+node_modules/
+bun.lockb
+
+# Env files (secrets)
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# Build outputs
+dist/
+build/
+.vite/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Cache
+.cache/
+.eslintcache
+
+# Coverage
+coverage/
+
+# Uploads (if any local files)
+uploads/
+
+# Temporary
+tmp/
+temp/
