@@ -4,7 +4,7 @@ import Message from "../models/message.model.js";
 import cloudinary from "../lib/cloudinary.js";
 import { getReceiverSocketId, io } from "../lib/socket.js";
 
-export const getUsersForSidebar = async (req, res) => {
+export const getUser = async (req, res) => {
   try {
     const loggedInUserId = req.user._id;
     const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-password");
@@ -16,7 +16,7 @@ export const getUsersForSidebar = async (req, res) => {
   }
 };
 
-export const getMessages = async (req, res) => {
+export const getChat = async (req, res) => {
   try {
     const { id: userToChatId } = req.params;
     const myId = req.user._id;
@@ -55,9 +55,7 @@ export const sendMessage = async (req, res) => {
     });
 
     await newMessage.save();
-
-  }
-  catch(error){
+  } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
-}
+};
